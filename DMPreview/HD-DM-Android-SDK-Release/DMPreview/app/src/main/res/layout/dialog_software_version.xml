@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/appVersion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dialog_horizontal_padding"
+        android:layout_marginTop="@dimen/dialog_vertical_spacing"
+        android:layout_marginEnd="@dimen/dialog_horizontal_padding"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="AppVersion: 1.2.4.9 (201912121234)" />
+
+    <TextView
+        android:id="@+id/sdkVersion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dialog_horizontal_padding"
+        android:layout_marginEnd="@dimen/dialog_horizontal_padding"
+        android:layout_marginBottom="@dimen/dialog_vertical_spacing"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appVersion"
+        tools:text="SDK version: 1.0.5.2" />
+
+    <TextView
+        android:id="@+id/license"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dialog_horizontal_padding"
+        android:layout_marginTop="@dimen/dialog_vertical_spacing"
+        android:layout_marginEnd="@dimen/dialog_horizontal_padding"
+        android:layout_marginBottom="@dimen/dialog_vertical_spacing"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sdkVersion"
+        tools:text="3rd Party License: Apache 2.0, MIT" />
+
+    <TextView
+        android:id="@+id/copyright"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dialog_horizontal_padding"
+        android:layout_marginTop="@dimen/dialog_vertical_spacing"
+        android:layout_marginEnd="@dimen/dialog_horizontal_padding"
+        android:layout_marginBottom="@dimen/dialog_vertical_spacing"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/license"
+        tools:text="Copyright (c) 2019, eYs3D Microelectronics,\nAll rights reserved" />
+
+    <TextView
+        android:id="@+id/connectedCamera"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/copyright"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="@dimen/dialog_horizontal_padding"
+        android:layout_marginTop="@dimen/dialog_vertical_spacing"
+        android:layout_marginEnd="@dimen/dialog_horizontal_padding"
+        tools:text="Connected Camera: Unknown" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

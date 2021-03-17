@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/firmwareVersionLabel"
+        style="@style/common_settings_label"
+        android:text="@string/firmware_version_firmware_version"
+        android:textIsSelectable="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/firmwareVersionText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/label_value_spacing"
+        android:layout_marginRight="10dp"
+        android:text="@string/firmware_version_value_unknown"
+        android:textIsSelectable="true"
+        app:layout_constraintBottom_toBottomOf="@id/firmwareVersionLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/firmwareVersionLabel"
+        app:layout_constraintTop_toTopOf="@id/firmwareVersionLabel" />
+
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/label_vertical_spacing"
+        android:background="?android:attr/dividerVertical"
+        app:layout_constraintTop_toBottomOf="@id/firmwareVersionLabel" />
+
+    <TextView
+        android:id="@+id/productIdLabel"
+        style="@style/common_settings_label"
+        android:text="@string/firmware_version_product_id"
+        android:textIsSelectable="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider1" />
+
+    <TextView
+        android:id="@+id/productIdText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/label_value_spacing"
+        android:text="@string/firmware_version_value_unknown"
+        android:textIsSelectable="true"
+        app:layout_constraintBottom_toBottomOf="@id/productIdLabel"
+        app:layout_constraintStart_toEndOf="@id/productIdLabel"
+        app:layout_constraintTop_toTopOf="@id/productIdLabel" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/label_vertical_spacing"
+        android:background="?android:attr/dividerVertical"
+        app:layout_constraintTop_toBottomOf="@id/productIdLabel" />
+
+    <TextView
+        android:id="@+id/vendorIdLabel"
+        style="@style/common_settings_label"
+        android:text="@string/firmware_version_vendor_id"
+        android:textIsSelectable="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider2" />
+
+    <TextView
+        android:id="@+id/vendorIdText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/label_value_spacing"
+        android:text="@string/firmware_version_value_unknown"
+        android:textIsSelectable="true"
+        app:layout_constraintBottom_toBottomOf="@id/vendorIdLabel"
+        app:layout_constraintStart_toEndOf="@id/vendorIdLabel"
+        app:layout_constraintTop_toTopOf="@id/vendorIdLabel" />
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/label_vertical_spacing"
+        android:background="?android:attr/dividerVertical"
+        app:layout_constraintTop_toBottomOf="@id/vendorIdLabel" />
+
+    <TextView
+        android:id="@+id/serialNumberLabel"
+        style="@style/common_settings_label"
+        android:text="@string/firmware_version_serial_number"
+        android:textIsSelectable="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider3" />
+
+    <TextView
+        android:id="@+id/serialNumberText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/label_value_spacing"
+        android:layout_marginRight="10dp"
+        android:text="@string/firmware_version_value_unknown"
+        android:textIsSelectable="true"
+        app:layout_constraintBottom_toBottomOf="@id/serialNumberLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@id/serialNumberLabel"
+        app:layout_constraintTop_toTopOf="@id/serialNumberLabel" />
+
+    <View
+        android:id="@+id/divider4"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/label_vertical_spacing"
+        android:background="?android:attr/dividerVertical"
+        app:layout_constraintTop_toBottomOf="@id/serialNumberLabel" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/app_detail_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider4" />
+</androidx.constraintlayout.widget.ConstraintLayout>

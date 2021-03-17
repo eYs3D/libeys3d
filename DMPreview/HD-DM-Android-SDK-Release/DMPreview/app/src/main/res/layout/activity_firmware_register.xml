@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:focusableInTouchMode="true">
+
+    <CheckBox
+        android:id="@+id/address_2_bytes_checkbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/base_margin_horizontal"
+        android:layout_marginTop="@dimen/label_vertical_spacing"
+        android:layout_marginEnd="@dimen/base_margin_horizontal"
+        android:text="@string/firmware_register_address_2_bytes"
+        app:layout_constraintTop_toBottomOf="@id/registerTypeRadioGroup" />
+
+    <CheckBox
+        android:id="@+id/value_2_bytes_checkbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/base_margin_horizontal"
+        android:layout_marginTop="@dimen/label_vertical_spacing"
+        android:layout_marginEnd="@dimen/base_margin_horizontal"
+        android:text="@string/firmware_register_value_2_bytes"
+        app:layout_constraintTop_toBottomOf="@id/address_2_bytes_checkbox" />
+
+    <RadioGroup
+        android:id="@+id/registerTypeRadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/label_vertical_spacing"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/fwRegisterRadioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/base_margin_horizontal"
+            android:layout_marginEnd="@dimen/base_margin_horizontal"
+            android:text="@string/firmware_register_fw_register"
+            android:checked="true"/>
+
+        <RadioButton
+            android:id="@+id/asicRegisterRadioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/base_margin_horizontal"
+            android:layout_marginEnd="@dimen/base_margin_horizontal"
+            android:text="@string/firmware_register_asic_register" />
+
+        <RadioButton
+            android:id="@+id/i2cRegisterRadioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/base_margin_horizontal"
+            android:layout_marginEnd="@dimen/base_margin_horizontal"
+            android:text="@string/firmware_register_i2c_register" />
+    </RadioGroup>
+
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/dividerVertical"
+        android:layout_marginTop="@dimen/label_vertical_spacing"
+        app:layout_constraintTop_toBottomOf="@id/value_2_bytes_checkbox"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/i2cSlaveLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/base_margin_horizontal"
+        android:layout_marginEnd="@dimen/base_margin_horizontal"
+        android:hint="@string/firmware_register_slave_id_register"
+        android:paddingTop="@dimen/text_input_vertical_spacing"
+        app:layout_constraintTop_toBottomOf="@id/divider1">
+
+        <com.esp.uvc.views.HexTextInput
+            android:id="@+id/i2cSlaveTextInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceListItemSmall"
+            android:inputType="text"
+            tools:text="deadbeef"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/dividerVertical"
+        android:layout_marginTop="@dimen/label_vertical_spacing"
+        app:layout_constraintTop_toBottomOf="@id/i2cSlaveLayout"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/addressLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/base_margin_horizontal"
+        android:layout_marginEnd="@dimen/base_margin_horizontal"
+        android:hint="@string/firmware_register_register_address"
+        android:paddingTop="@dimen/text_input_vertical_spacing"
+        app:layout_constraintTop_toBottomOf="@id/divider2">
+
+        <com.esp.uvc.views.HexTextInput
+            android:id="@+id/addressTextInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceListItemSmall"
+            android:inputType="text|textNoSuggestions"
+            tools:text="deadbeef"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/dividerVertical"
+        android:layout_marginTop="@dimen/label_vertical_spacing"
+        app:layout_constraintTop_toBottomOf="@id/addressLayout"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/valueLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/base_margin_horizontal"
+        android:layout_marginEnd="@dimen/base_margin_horizontal"
+        android:hint="@string/firmware_register_register_value"
+        android:paddingTop="@dimen/text_input_vertical_spacing"
+        app:layout_constraintTop_toBottomOf="@id/divider3">
+
+        <com.esp.uvc.views.HexTextInput
+            android:id="@+id/valueTextInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceListItemSmall"
+            android:inputType="text"
+            tools:text="deadbeef"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <View
+        android:id="@+id/divider4"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/dividerVertical"
+        android:layout_marginTop="@dimen/label_vertical_spacing"
+        app:layout_constraintTop_toBottomOf="@id/valueLayout"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider4"
+        android:background="@color/app_detail_background" />
+
+    <Button
+        android:id="@+id/getButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider4"
+        android:layout_marginStart="@dimen/base_margin_horizontal"
+        android:layout_marginTop="@dimen/label_vertical_spacing"
+        android:text="@string/firmware_register_get"/>
+
+    <Button
+        android:id="@+id/setButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider4"
+        android:layout_marginEnd="@dimen/base_margin_horizontal"
+        android:layout_marginTop="@dimen/label_vertical_spacing"
+        android:text="@string/firmware_register_set"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

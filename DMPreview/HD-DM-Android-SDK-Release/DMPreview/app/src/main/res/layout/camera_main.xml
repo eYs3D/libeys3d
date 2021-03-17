@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ff000000"
+    android:gravity="center_vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/main_layout_top"
+        android:orientation="horizontal"
+        android:layout_above="@+id/layout_tool">
+        <RelativeLayout
+            android:id="@+id/camera_layout_processed"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <com.esp.uvc.old.widget.UVCCameraTextureView
+                android:id="@+id/camera_view_processed"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true" />
+
+            <ImageView
+                android:id="@+id/frame_image_processed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/border"
+                android:layout_alignTop="@+id/camera_view_processed"
+                android:layout_alignBottom="@+id/camera_view_processed"
+                android:layout_alignLeft="@+id/camera_view_processed"
+                android:layout_alignRight="@+id/camera_view_processed" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/camera_layout_L"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <com.esp.uvc.old.widget.UVCCameraTextureView
+                android:id="@+id/camera_view_L"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true" />
+            <ImageView
+                android:id="@+id/frame_image_L"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/border"
+                android:layout_alignTop="@+id/camera_view_L"
+                android:layout_alignBottom="@+id/camera_view_L"
+                android:layout_alignLeft="@+id/camera_view_L"
+                android:layout_alignRight="@+id/camera_view_L" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/camera_layout_R"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <com.esp.uvc.old.widget.UVCCameraTextureView
+                android:id="@+id/camera_view_R"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true" />
+
+            <FrameLayout
+                android:id="@+id/frame_cursor_R"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/camera_view_R"
+                android:layout_alignBottom="@+id/camera_view_R"
+                android:layout_alignLeft="@+id/camera_view_R"
+                android:layout_alignRight="@+id/camera_view_R">
+                <TextView
+                    android:id="@+id/tvMeasure"
+                    android:layout_width="280dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="right"
+                    android:background="@color/DARKTURQUOISE"
+                    android:paddingLeft="5dp"
+                    android:textColor="@color/RED"
+                    android:textSize="22sp"
+                    android:alpha="0.82"/>
+
+                <ImageView
+                    android:id="@+id/measure_spot"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/measure_spot"
+                    android:tint="@color/RED"
+                    android:scaleType="centerInside"
+                    android:layout_gravity="center"/>
+            </FrameLayout>
+
+            <ImageView
+                android:id="@+id/frame_image_R"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/border"
+                android:layout_alignTop="@+id/camera_view_R"
+                android:layout_alignBottom="@+id/camera_view_R"
+                android:layout_alignLeft="@+id/camera_view_R"
+                android:layout_alignRight="@+id/camera_view_R" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/layout_tool"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/WHITE"
+        android:orientation="vertical"
+        android:padding="5dp">
+        <LinearLayout
+            android:id="@+id/btn_tool"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/WHITE"
+            >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_alignParentEnd="true"
+                >
+                <TextView
+                    android:id="@+id/textview_IR_value"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/text_IR_value"
+                    android:textColor="@color/RED"
+                    android:textStyle="bold"
+                    android:textSize="10sp"
+                    android:layout_gravity="left"
+                    android:gravity="left"/>
+                <SeekBar
+                    android:id="@+id/seekbar_IR_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:max="10"
+                    android:progress="0"
+                    android:layout_gravity="center_vertical"
+                    android:background="#d0ffffff"/>
+
+            </LinearLayout>
+            <TextView
+                android:id="@+id/tvFrameRate"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/RED"
+                android:textSize="10sp"
+                 />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/btn_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/WHITE"
+             >
+
+            <TextView
+                android:id="@+id/text_ir"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:text="IR"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:id="@+id/image_save_ply"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:src="@drawable/capture"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:id="@+id/image_measure"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:src="@drawable/measure"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:id="@+id/image_five"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:src="@drawable/settings"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

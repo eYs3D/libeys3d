@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceScreen
+        android:title="@string/preview_image_settings_title"
+        android:summary="@string/preview_image_settings_summary"
+        android:persistent="false">
+        <intent
+            android:targetPackage="@string/package_name"
+            android:targetClass="com.esp.uvc.old.usbcamera.PreviewImageSettings" />
+    </PreferenceScreen>
+
+    <PreferenceScreen
+        android:title="@string/firmware_version_settings_title"
+        android:summary="@string/firmware_version_settings_summary"
+        android:persistent="false">
+        <intent
+            android:targetPackage="@string/package_name"
+            android:targetClass="com.esp.uvc.old.usbcamera.FirmwareVersionSettings" />
+    </PreferenceScreen>
+
+    <PreferenceScreen
+        android:title="@string/firmware_register_settings_title"
+        android:summary="@string/firmware_register_settings_summary"
+        android:persistent="false">
+       <intent
+            android:targetPackage="@string/package_name"
+            android:targetClass="com.esp.uvc.old.usbcamera.FirmwareRegisterSettings" />
+    </PreferenceScreen>
+    <!--<PreferenceScreen-->
+        <!--android:key="firmware_update"-->
+        <!--android:title="@string/firmware_update_title"-->
+        <!--android:summary="@string/firmware_update_summary"-->
+        <!--android:persistent="false">-->
+        <!--<intent-->
+            <!--android:targetPackage="@string/package_name"-->
+            <!--android:targetClass="FirmwareUpdateSettings" />-->
+    <!--</PreferenceScreen>-->
+    <PreferenceScreen
+        android:title="@string/camera_sensor_settings_title"
+        android:summary="@string/camera_sensor_settings_summary"
+        android:persistent="false">
+        <intent
+            android:targetPackage="@string/package_name"
+            android:targetClass="com.esp.uvc.old.usbcamera.CameraSensorSettings" />
+    </PreferenceScreen>
+
+    <PreferenceScreen
+        android:title="@string/firmware_table_settings_title"
+        android:summary="@string/firmware_table_settings_summary"
+        android:persistent="false">
+        <intent
+            android:targetPackage="@string/package_name"
+            android:targetClass="com.esp.uvc.old.usbcamera.FirmwareTableSettings" />
+    </PreferenceScreen>
+
+    <PreferenceScreen
+        android:title="@string/software_version_title"
+        android:summary="@string/software_version_summary"
+        android:persistent="false">
+        <intent
+            android:targetPackage="@string/package_name"
+            android:targetClass="com.esp.uvc.old.usbcamera.SoftwareVersionSettings" />
+    </PreferenceScreen>
+
+</PreferenceScreen>

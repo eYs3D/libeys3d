@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:focusable="true" 
+    android:focusableInTouchMode="true"
+    android:gravity="center_horizontal">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1">
+
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="10dip">
+
+                <RadioGroup
+                    android:id="@+id/rgroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+
+                <RadioButton
+                    android:id="@+id/radiobtn_fw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/firmware_register_radiobtn_fw" />
+
+                <RadioButton
+                    android:id="@+id/radiobtn_asic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/firmware_register_radiobtn_asic" />
+
+                <RadioButton
+                    android:id="@+id/radiobtn_i2c"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/firmware_register_radiobtn_i2c" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/chkbox_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/chkbox_address_title" />
+
+        <CheckBox
+            android:id="@+id/chkbox_vaule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/chkbox_vaule_title" />
+
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:orientation="horizontal">
+
+            <TextView android:id="@+id/slave_id_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/firmware_register_slave_id"/>
+
+            <EditText android:id="@+id/slave_id_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:digits="0123456789ABCDEF"
+                android:inputType="textCapCharacters"
+                android:maxLength="4"
+                android:textAppearance="?android:attr/textAppearanceLarge"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:orientation="horizontal">
+
+            <TextView android:id="@+id/address_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/firmware_register_address"/>
+
+            <EditText android:id="@+id/address_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:digits="0123456789ABCDEF"
+                android:inputType="textCapCharacters"
+                android:maxLength="4"
+                android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+        </LinearLayout>
+
+        <TextView android:id="@+id/value_text"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/firmware_register_value"/>
+
+
+        <EditText android:id="@+id/value_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:digits="0123456789ABCDEF"
+            android:inputType="textCapCharacters"
+            android:maxLength="4"
+            android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:dividerPadding="8dip"
+        android:orientation="horizontal">
+
+        <Button android:id="@+id/read_button"
+            android:layout_width="0dip"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:ellipsize="marquee"
+            android:singleLine="true"
+            android:text="@string/btn_get"/>
+
+        <Button android:id="@+id/write_button"
+            android:layout_width="0dip"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:ellipsize="marquee"
+            android:singleLine="true"
+            android:text="@string/btn_set"/>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,88 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext.kotlin_version = '1.4.0'
+    repositories {
+        jcenter()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
+        maven { url 'https://jitpack.io' }
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.3'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
+        maven { url 'https://jitpack.io' }
+    }
+}
+
+ext {
+    // Sdk and tools
+    minSdkVersion = 21//BLE
+    targetSdkVersion = 28
+    compileSdkVersion = 28
+    buildToolsVersion = '28.0.3'
+
+    //androidX
+    appcompatx = '1.1.0'
+    ktx_core = '1.1.0'
+    constraint_layoutx = '2.0.0-beta2'
+    material = '1.0.0'
+    recycler = '1.0.0'
+    card = '1.0.0'
+
+    //Kotlin
+
+    //coroutines
+    kotlin_coroutines = '1.2.1'
+    kotlin_coroutines_android = '1.2.1'
+
+    //koin
+    koin = '2.0.1'
+
+    //Dialog
+    material_dialog_core = '3.1.0'
+    //color
+    colorseekbar = '1.0.2'
+    slider = '2.1.2'
+
+    appVersionCode = 1
+    appVersionName = '1.3.9'
+    appDevNumber = '1'
+
+    sdkVersionCode = 1
+    sdkVersionName = '1.1.4.1'
+    sdkDevNumber = '1'
+
+    buildVersion = genBuildNumber()
+}
+
+def buildTime() {
+    def date = new Date()
+    def formattedDate = date.format('yyyyMMddHHmm')
+    return formattedDate
+}
+
+def genBuildNumber() {
+    return String.valueOf(buildTime())
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+task createWrapper(type: Wrapper) {
+    gradleVersion = '5.4.1'
+}

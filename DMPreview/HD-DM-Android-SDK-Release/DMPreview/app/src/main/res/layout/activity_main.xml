@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ff000000"
+    tools:context="com.etron.usbcamera.MainActivity"
+    tools:ignore="MergeRootFrame" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFF0000" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView1"
+        android:layout_centerInParent="true"
+        android:baselineAligned="false" >
+
+        <RelativeLayout
+            android:id="@+id/camera_layout_L"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+            <com.esp.uvc.old.widget.UVCCameraTextureView
+                android:id="@+id/camera_view_L"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true" />
+
+            <ImageView
+                android:id="@+id/frame_image_L"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/camera_view_L"
+                android:layout_alignLeft="@+id/camera_view_L"
+                android:layout_alignRight="@+id/camera_view_L"
+                android:layout_alignTop="@+id/camera_view_L"
+                android:src="@drawable/border" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/camera_layout_R"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+            <com.esp.uvc.old.widget.UVCCameraTextureView
+                android:id="@+id/camera_view_R"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true" />
+
+            <ImageView
+                android:id="@+id/frame_image_R"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/camera_view_R"
+                android:layout_alignLeft="@+id/camera_view_R"
+                android:layout_alignRight="@+id/camera_view_R"
+                android:layout_alignTop="@+id/camera_view_R"
+                android:src="@drawable/border" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

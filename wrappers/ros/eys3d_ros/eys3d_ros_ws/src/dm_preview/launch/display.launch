@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<launch>
+  <include file="$(find dm_preview)/launch/dm_preview.launch"/>
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find dm_preview)/rviz/dm_preview.rviz" output="screen"/>
+</launch>

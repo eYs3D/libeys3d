@@ -1,0 +1,19 @@
+<launch>
+    <include file="$(find rikirobot_urdf)/launch/display.launch"/>
+    <include file="$(find eys3d_robot)/launch/depth_camera/depth2lidar/eys3d_dmpreview_to_lidar.launch"/>
+
+    <node pkg="tf" type="static_transform_publisher" name="base_link_to_laser" args="0 0 0 0 0 0  /base_link /laser  100"/>
+
+    <!--
+    <include file="$(find mrobot_navigation)/launch/gmapping.launch"/>
+    <include file="$(find mrobot_navigation)/launch/move_base.launch"/>
+    -->
+  <include file="$(find eys3d_robot)/launch/depth_camera/gmapping/eys3d_gmapping.xml"/>
+  <include file="$(find eys3d_robot)/param/navigation/move_base.xml"/>
+
+  <node pkg="mrobot_navigation" name="exploring_slam" type="exploring_slam.py" output="screen">
+  </node>
+    
+    <!-- 运行rviz -->
+    <!-- node pkg="rviz" type="rviz" name="rviz" args="-d $(find mrobot_navigation)/rviz/nav.rviz"/ -->
+</launch>

@@ -1,0 +1,9 @@
+<!--
+  Used for visualising rplidar in action.
+
+  It requires rplidar.launch.
+ -->
+<launch>
+  <include file="$(find eys3d_robot)/launch/lidar/$(env EYS3DLIDAR).launch" />
+  <include file="$(find eys3d_robot)/launch/hectormapping.launch" />
+</launch>

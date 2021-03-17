@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    <ListPreference
+        android:key="depth_data_type"
+        android:title="@string/depth_data_type_title"
+        android:persistent="false"/>
+    <PreferenceCategory android:key="category_general"
+        android:title="@string/category_advance_title"/>
+    <CheckBoxPreference
+        android:key="enable_stream_color_checked"
+        android:title="@string/enable_stream_color_checked_title"
+        android:summary="@string/enable_stream_color_checked_summary"/>
+    <CheckBoxPreference
+        android:key="enable_stream_depth_checked"
+        android:title="@string/enable_stream_depth_checked_title"
+        android:summary="@string/enable_stream_depth_checked_summary"/>
+    <ListPreference
+        android:key="etron_preview_frame_size"
+        android:title="@string/etron_preview_frame_size_title"
+        android:persistent="false"/>
+    <ListPreference
+        android:key="depth_preview_frame_size"
+        android:title="@string/depth_preview_frame_size_title"
+        android:persistent="false"/>
+
+    <EditTextPreference
+        android:key="color_preview_frame_rate"
+        android:title="@string/etron_color_preview_frame_rate_title"
+        android:dialogTitle="@string/input_frame_rate" />
+
+    <EditTextPreference
+        android:key="depth_preview_frame_rate"
+        android:title="@string/etron_depth_preview_frame_rate_title"
+        android:dialogTitle="@string/input_frame_rate" />
+
+    <PreferenceCategory android:key="category_view"
+        android:title="@string/category_view_title"/>
+
+    <CheckBoxPreference
+        android:key="reverse_view_window_checked"
+        android:title="@string/reverse_view_window_title"
+        android:summary="@string/reverse_view_window_summary"/>
+
+    <CheckBoxPreference
+        android:key="landscape_view_window_checked"
+        android:title="@string/landscape_view_window_title"
+        android:summary="@string/reverse_view_window_summary"/>
+
+    <CheckBoxPreference
+        android:key="flip_view_window_checked"
+        android:title="@string/flip_view_window_title"
+        android:summary="@string/flip_view_window_summary"/>
+
+    <PreferenceCategory android:key="option"
+        android:title="@string/option_title"/>
+    <CheckBoxPreference
+        android:key="monitor_framerate"
+        android:title="@string/monitor_framerate"
+        android:summary="@string/monitor_framerate_summry"/>
+
+    <PreferenceCategory android:key="post_process"
+        android:title="@string/post_process_title"/>
+
+    <CheckBoxPreference
+        android:key="post_process_opencl"
+        android:title="@string/post_process_opencl"
+        android:summary="@string/post_process_opencl_summary"/>
+    <EditTextPreference
+        android:key="z_far"
+        android:title="@string/z_far_title"
+        android:dialogTitle="@string/z_far_title" />
+
+
+</PreferenceScreen>

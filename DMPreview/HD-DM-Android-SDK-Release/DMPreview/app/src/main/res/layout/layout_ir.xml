@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.warkiz.widget.IndicatorStayLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/seek_margin">
+
+        <com.warkiz.widget.IndicatorSeekBar
+            android:id="@+id/ir_value_seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:isb_progress="6"
+            app:isb_ticks_count="6"
+            app:isb_tick_texts_size="8sp"
+            app:isb_show_tick_marks_type="divider"
+            app:isb_show_tick_texts="true"
+            app:isb_tick_texts_color="@color/colorPrimary" />
+
+    </com.warkiz.widget.IndicatorStayLayout>
+
+    <CheckBox
+        android:id="@+id/ir_range_extended_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/base_margin_horizontal"
+        android:layout_marginTop="@dimen/label_vertical_spacing"
+        android:text="@string/checkbox_extended" />
+
+</LinearLayout>

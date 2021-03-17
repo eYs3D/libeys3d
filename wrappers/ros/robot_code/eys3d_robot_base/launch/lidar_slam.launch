@@ -1,0 +1,5 @@
+<launch>
+  <include file="$(find eys3d_robot)/launch/lidar/$(env EYS3DLIDAR).launch" />
+  <include file="$(find eys3d_robot)/param/navigation/slam_gmapping.xml" />
+  <include file="$(find eys3d_robot)/param/navigation/move_base.xml" />
+</launch>

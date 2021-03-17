@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.esp.uvc">
+
+    <application
+        android:name=".application.AndroidApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/eys3d_logo"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppThemeXX"
+        tools:ignore="GoogleAppIndexingWarning,HardcodedDebugMode">
+
+        <activity
+            android:name=".main.CameraActivity"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".main.settings.SettingsMainActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:parentActivityName=".main.CameraActivity"
+            android:screenOrientation="fullSensor" />
+
+        <activity
+            android:name=".main.settings.FirmwareVersionActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:parentActivityName=".main.settings.SettingsMainActivity"
+            android:screenOrientation="fullSensor" />
+
+        <activity
+            android:name=".main.settings.PreviewImageActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:parentActivityName=".main.settings.SettingsMainActivity"
+            android:screenOrientation="fullSensor"
+            android:windowSoftInputMode="stateHidden" />
+
+        <activity
+            android:name=".main.settings.FirmwareRegisterActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:parentActivityName=".main.settings.SettingsMainActivity"
+            android:screenOrientation="fullSensor"
+            android:windowSoftInputMode="stateHidden" />
+
+        <activity
+            android:name=".main.settings.FirmwareTableActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:label="@string/firmware_table_title"
+            android:parentActivityName=".main.settings.SettingsMainActivity"
+            android:screenOrientation="fullSensor"
+            android:windowSoftInputMode="stateHidden" />
+
+        <activity
+            android:name=".main.settings.sensor.SensorSettingsActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:label="@string/sensor_settings_title"
+            android:parentActivityName=".main.settings.SettingsMainActivity"
+            android:screenOrientation="fullSensor" />
+
+        <activity
+            android:name=".main.settings.PlyViewerActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:label="@string/ply_viewer_title"
+            android:parentActivityName=".main.settings.SettingsMainActivity"
+            android:screenOrientation="fullSensor" />
+
+        <activity
+            android:name=".main.settings.module_sync.ModuleSyncActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:parentActivityName=".main.settings.SettingsMainActivity"
+            android:screenOrientation="fullSensor" />
+
+        <activity
+            android:name=".old.usbcamera.CameraMainActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="nosensor"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".old.usbcamera.SettingsMainActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/app_name"
+            android:screenOrientation="fullSensor" />
+
+        <activity
+            android:name=".old.usbcamera.PreviewImageSettings"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/preview_image_settings_title"
+            android:screenOrientation="fullSensor" />
+
+        <activity
+            android:name=".old.usbcamera.FirmwareVersionSettings"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/firmware_version_settings_title"
+            android:screenOrientation="fullSensor" />
+        <activity
+            android:name=".old.usbcamera.FirmwareUpdateSettings"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/firmware_update_title"
+            android:screenOrientation="fullSensor" />
+        <activity
+            android:name=".old.usbcamera.FirmwareTableSettings"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/firmware_table_settings_title"
+            android:screenOrientation="fullSensor" />
+
+        <activity
+            android:name=".old.usbcamera.FirmwareRegisterSettings"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/firmware_register_settings_title"
+            android:screenOrientation="fullSensor" />
+
+        <activity
+            android:name=".old.usbcamera.SoftwareVersionSettings"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/software_version_title"
+            android:screenOrientation="fullSensor" />
+
+        <activity
+            android:name=".old.usbcamera.CameraSensorSettings"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/software_version_title"
+            android:screenOrientation="fullSensor" />
+
+    </application>
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission
+        android:name="android.permission.BATTERY_STATS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+</manifest>

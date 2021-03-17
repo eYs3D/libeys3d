@@ -1,0 +1,687 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusableInTouchMode="true">
+
+        <CheckBox
+            android:id="@+id/enable_color_stream_checkbox"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/base_margin_horizontal"
+            android:layout_marginEnd="@dimen/base_margin_horizontal"
+            app:layout_constraintBottom_toBottomOf="@id/enable_color_stream_layout"
+            app:layout_constraintTop_toTopOf="@id/enable_color_stream_layout" />
+
+        <CheckBox
+            android:id="@+id/enable_depth_stream_checkbox"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/base_margin_horizontal"
+            android:layout_marginEnd="@dimen/base_margin_horizontal"
+            app:layout_constraintBottom_toBottomOf="@id/enable_depth_stream_layout"
+            app:layout_constraintTop_toTopOf="@id/enable_depth_stream_layout" />
+
+        <LinearLayout
+            android:id="@+id/enable_color_stream_layout"
+            style="@style/item_2_lines"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            app:layout_constraintTop_toBottomOf="@id/camera_stream_settings_label">
+
+            <TextView
+                style="@style/item_title"
+                android:text="@string/preview_image_enable_color_stream_title" />
+
+            <TextView
+                style="@style/item_subtitle"
+                android:text="@string/preview_image_enable_color_stream_subtitle" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/enable_depth_stream_layout"
+            style="@style/item_2_lines"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            app:layout_constraintTop_toBottomOf="@id/divider2">
+
+            <TextView
+                style="@style/item_title"
+                android:text="@string/preview_image_enable_depth_stream_title" />
+
+            <TextView
+                style="@style/item_subtitle"
+                android:text="@string/preview_image_enable_depth_stream_subtitle" />
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/presetRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="@dimen/label_vertical_spacing"
+            android:layout_marginStart="@dimen/base_margin_horizontal"
+            android:layout_marginEnd="@dimen/base_margin_horizontal"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/presetRadioButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Presets"
+                android:enabled="false"/>
+
+            <RadioButton
+                android:id="@+id/manualRadioButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="Manual"
+                android:enabled="false"/>
+        </RadioGroup>
+
+        <View android:id="@+id/divider11"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            app:layout_constraintTop_toBottomOf="@id/presetRadioGroup"
+            android:background="?android:attr/dividerVertical"
+            android:layout_marginTop="@dimen/label_vertical_spacing"/>
+
+        <Spinner android:id="@+id/presetSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/base_margin_horizontal"
+            android:layout_marginEnd="@dimen/base_margin_horizontal"
+            app:layout_constraintTop_toBottomOf="@id/divider11"
+            tools:listitem="Mode 1"
+            android:layout_marginTop="@dimen/label_vertical_spacing"/>
+
+        <View android:id="@+id/divider10"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            app:layout_constraintTop_toBottomOf="@id/presetSpinner"
+            android:background="?android:attr/dividerVertical"
+            android:layout_marginTop="@dimen/label_vertical_spacing"/>
+
+        <TextView
+            android:id="@+id/depth_data_type_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/base_margin_horizontal"
+            android:layout_marginTop="@dimen/label_vertical_spacing"
+            android:text="@string/preview_image_depth_data_type"
+            android:textAppearance="?android:attr/textAppearanceListItemSmall"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider10" />
+
+        <Spinner
+            android:id="@+id/depth_data_type_spinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="@dimen/base_margin_horizontal"
+            app:layout_constraintStart_toStartOf="@+id/depth_data_type_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/depth_data_type_label"
+            tools:listitem="8_BITS" />
+
+        <TextView
+            android:id="@+id/camera_stream_settings_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/base_margin_horizontal"
+            android:layout_marginTop="@dimen/label_vertical_spacing"
+            android:text="@string/preview_image_camera_stream_settings"
+            android:textAppearance="?android:attr/textAppearance"
+            android:textColor="@color/colorAccent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider1" />
+
+        <TextView
+            android:id="@+id/color_stream_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/base_margin_horizontal"
+            android:layout_marginTop="@dimen/label_vertical_spacing"
+            android:text="@string/preview_image_color_stream_label"
+            android:textAppearance="?android:attr/textAppearanceListItemSmall"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider3" />
+
+        <Spinner
+            android:id="@+id/color_stream_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/base_margin_horizontal"
+            app:layout_constraintBottom_toBottomOf="@id/color_stream_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/color_stream_label"
+            tools:listitem="1024x720" />
+
+        <TextView
+            android:id="@+id/depth_stream_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/base_margin_horizontal"
+            android:layout_marginTop="@dimen/label_vertical_spacing"
+            android:text="@string/preview_image_depth_stream_label"
+            android:textAppearance="?android:attr/textAppearanceListItemSmall"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider4" />
+
+        <Spinner
+            android:id="@+id/depth_stream_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/base_margin_horizontal"
+            app:layout_constraintBottom_toBottomOf="@id/depth_stream_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/depth_stream_label"
+            tools:listitem="1024x720" />
+
+        <View
+            android:id="@+id/divider1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/label_vertical_spacing"
+            android:background="?android:attr/dividerVertical"
+            app:layout_constraintTop_toBottomOf="@id/depth_data_type_spinner" />
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/dividerVertical"
+            app:layout_constraintTop_toBottomOf="@id/enable_color_stream_layout" />
+
+        <View
+            android:id="@+id/divider3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/dividerVertical"
+            app:layout_constraintTop_toBottomOf="@id/enable_depth_stream_layout" />
+
+        <View
+            android:id="@+id/divider4"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/label_vertical_spacing"
+            android:background="?android:attr/dividerVertical"
+            app:layout_constraintTop_toBottomOf="@id/color_stream_label" />
+
+        <View
+            android:id="@+id/divider5"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/label_vertical_spacing"
+            android:background="?android:attr/dividerVertical"
+            app:layout_constraintTop_toBottomOf="@id/depth_stream_label" />
+
+        <View
+            android:id="@+id/divider6"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/dividerVertical"
+            app:layout_constraintTop_toBottomOf="@id/colorFpsContainer" />
+
+        <View
+            android:id="@+id/divider7"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/dividerVertical"
+            app:layout_constraintTop_toBottomOf="@id/depthFpsContainer" />
+
+        <View
+            android:id="@+id/divider8"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/dividerVertical"
+            app:layout_constraintTop_toBottomOf="@id/ir_control_layout" />
+
+        <View
+            android:id="@+id/divider9"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/dividerVertical"
+            android:layout_marginTop="@dimen/label_vertical_spacing"
+            app:layout_constraintTop_toBottomOf="@id/depthRangeContainer" />
+
+        <View
+            android:id="@+id/divider12"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/dividerVertical"
+            app:layout_constraintTop_toBottomOf="@id/enable_mirror_layout" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/colorFpsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/divider5">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/colorFpsSpinnerContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                android:paddingTop="@dimen/label_vertical_spacing"
+                android:paddingBottom="@dimen/label_vertical_spacing"
+                android:visibility="gone">
+
+                <Spinner
+                    android:id="@+id/colorFpsSpinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/base_margin_horizontal"
+                    app:layout_constraintBottom_toBottomOf="@id/colorFpsLabel"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/colorFpsLabel"
+                    tools:listitem="20"/>
+
+                <TextView
+                    android:id="@+id/colorFpsLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/base_margin_horizontal"
+                    android:text="@string/preview_image_color_frame_rate_label"
+                    android:textAppearance="?android:attr/textAppearanceListItemSmall"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/color_frame_rate_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/base_margin_horizontal"
+                android:layout_marginEnd="@dimen/base_margin_horizontal"
+                android:hint="@string/preview_image_color_frame_rate_label"
+                android:paddingTop="@dimen/text_input_vertical_spacing"
+                android:textColorHint="@color/black"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/color_frame_rate_text_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:textAppearance="?android:attr/textAppearanceListItemSmall"
+                    tools:text="20" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/depthFpsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/divider6">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/depthFpsSpinnerContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                android:paddingTop="@dimen/label_vertical_spacing"
+                android:paddingBottom="@dimen/label_vertical_spacing"
+                android:visibility="gone">
+
+                <Spinner
+                    android:id="@+id/depthFpsSpinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/base_margin_horizontal"
+                    app:layout_constraintBottom_toBottomOf="@id/depthFpsLabel"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/depthFpsLabel"
+                    tools:listitem="20"/>
+
+                <TextView
+                    android:id="@+id/depthFpsLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/base_margin_horizontal"
+                    android:text="@string/preview_image_depth_frame_rate_label"
+                    android:textAppearance="?android:attr/textAppearanceListItemSmall"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/depth_frame_rate_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/base_margin_horizontal"
+                android:layout_marginEnd="@dimen/base_margin_horizontal"
+                android:hint="@string/preview_image_depth_frame_rate_label"
+                android:paddingTop="@dimen/text_input_vertical_spacing"
+                android:textColorHint="@color/black"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/depth_frame_rate_text_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:textAppearance="?android:attr/textAppearanceListItemSmall"
+                    tools:text="30" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/option_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/base_margin_horizontal"
+            android:layout_marginTop="@dimen/label_vertical_spacing"
+            android:text="@string/preview_image_option_label"
+            android:textAppearance="?android:attr/textAppearance"
+            android:textColor="@color/colorAccent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider7" />
+
+        <LinearLayout
+            android:id="@+id/enable_show_fps_layout"
+            style="@style/item_2_lines"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            app:layout_constraintTop_toBottomOf="@id/option_label">
+
+            <TextView
+                style="@style/item_title"
+                android:text="@string/preview_image_show_fps_title" />
+
+            <TextView
+                style="@style/item_subtitle"
+                android:text="@string/preview_image_show_fps_subtitle" />
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/enable_show_fps_checkbox"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/base_margin_horizontal"
+            android:layout_marginEnd="@dimen/base_margin_horizontal"
+            app:layout_constraintBottom_toBottomOf="@id/enable_show_fps_layout"
+            app:layout_constraintTop_toTopOf="@id/enable_show_fps_layout" />
+
+        <LinearLayout
+            android:id="@+id/enable_ir_override_layout"
+            style="@style/item_2_lines"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            app:layout_constraintTop_toBottomOf="@id/enable_show_fps_layout"
+            android:visibility="gone">
+
+            <TextView
+                style="@style/item_title"
+                android:text="@string/preview_image_ir_override_title" />
+
+            <TextView
+                style="@style/item_subtitle"
+                android:text="@string/preview_image_ir_override_subtitle" />
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/enable_ir_override"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/base_margin_horizontal"
+            android:layout_marginEnd="@dimen/base_margin_horizontal"
+            app:layout_constraintBottom_toBottomOf="@id/enable_ir_override_layout"
+            app:layout_constraintTop_toTopOf="@id/enable_ir_override_layout"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/ir_control_label"
+            app:layout_constraintTop_toBottomOf="@id/enable_show_fps_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ir_title"
+            android:layout_marginStart="@dimen/base_margin_horizontal"
+            android:layout_marginEnd="@dimen/base_margin_horizontal"
+            android:layout_marginTop="@dimen/label_vertical_spacing"
+            android:textAppearance="?android:attr/textAppearanceListItemSmall"/>
+
+        <include layout="@layout/layout_ir"
+            android:id="@+id/ir_control_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/ir_control_label"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/z_far_layout"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/base_margin_horizontal"
+            android:layout_marginEnd="@dimen/base_margin_horizontal"
+            android:hint="@string/preview_image_z_far_for_save_ply"
+            android:paddingTop="@dimen/text_input_vertical_spacing"
+            android:textColorHint="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/divider8">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/z_far_text_input"
+                android:enabled="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:textAppearance="?android:attr/textAppearanceListItemSmall"
+                tools:text="1000" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/roiSizeLabel"
+            app:layout_constraintTop_toBottomOf="@id/z_far_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/preview_image_roi_size_label"
+            android:layout_marginStart="@dimen/base_margin_horizontal"
+            android:layout_marginEnd="@dimen/base_margin_horizontal"
+            android:layout_marginTop="@dimen/label_vertical_spacing"
+            android:textAppearance="?android:attr/textAppearanceListItemSmall"/>
+
+        <com.warkiz.widget.IndicatorStayLayout
+            android:id="@+id/roiSeekbarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/roiSizeLabel">
+
+            <com.warkiz.widget.IndicatorSeekBar
+                android:id="@+id/roiSeekbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/label_vertical_spacing"
+                android:paddingStart="@dimen/base_margin_horizontal"
+                android:paddingEnd="@dimen/base_margin_horizontal"
+                app:isb_show_indicator="rounded_rectangle"
+                app:isb_show_tick_marks_type="divider"
+                app:isb_show_tick_texts="true"
+                app:isb_tick_texts_color="@color/colorPrimary"
+                app:isb_ticks_count="6" />
+        </com.warkiz.widget.IndicatorStayLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/roiSeekbarLayout"
+            android:id="@+id/depthRangeContainer"
+            android:visibility="gone">
+            <TextView
+                android:id="@+id/depthRangeLabel"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/preview_image_depth_range_label"
+                android:layout_marginStart="@dimen/base_margin_horizontal"
+                android:layout_marginEnd="@dimen/base_margin_horizontal"
+                android:layout_marginTop="@dimen/label_vertical_spacing"
+                android:textAppearance="?android:attr/textAppearanceListItemSmall"/>
+
+            <com.warkiz.widget.IndicatorStayLayout
+                android:id="@+id/depthRangeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/depthRangeLabel">
+
+                <com.warkiz.widget.IndicatorSeekBar
+                    android:id="@+id/depthRangeSeekbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/label_vertical_spacing"
+                    android:paddingStart="@dimen/base_margin_horizontal"
+                    android:paddingEnd="@dimen/base_margin_horizontal"
+                    app:isb_show_indicator="rounded_rectangle"
+                    app:isb_show_tick_marks_type="divider"
+                    app:isb_show_tick_texts="true"
+                    app:isb_tick_texts_color="@color/colorPrimary"
+                    app:isb_ticks_count="3" />
+            </com.warkiz.widget.IndicatorStayLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/orientation_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/base_margin_horizontal"
+            android:layout_marginTop="@dimen/label_vertical_spacing"
+            android:text="@string/preview_image_orientation_label"
+            android:textAppearance="?android:attr/textAppearance"
+            android:textColor="@color/colorAccent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider9" />
+
+        <LinearLayout
+            android:id="@+id/enable_180_flip_layout"
+            style="@style/item_2_lines"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            app:layout_constraintTop_toBottomOf="@id/orientation_label">
+
+            <TextView
+                style="@style/item_title"
+                android:text="@string/preview_image_enable_180_flip_title" />
+
+            <TextView
+                style="@style/item_subtitle"
+                android:text="@string/preview_image_enable_180_flip_subtitle" />
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/enable_180_flip_checkbox"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/base_margin_horizontal"
+            android:layout_marginEnd="@dimen/base_margin_horizontal"
+            android:enabled="true"
+            app:layout_constraintBottom_toBottomOf="@id/enable_180_flip_layout"
+            app:layout_constraintTop_toTopOf="@id/enable_180_flip_layout" />
+
+        <LinearLayout
+            android:id="@+id/enable_landscape_layout"
+            style="@style/item_2_lines"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            app:layout_constraintTop_toBottomOf="@id/enable_180_flip_checkbox">
+
+            <TextView
+                style="@style/item_title"
+                android:text="@string/preview_image_enable_landscape_title" />
+
+            <TextView
+                style="@style/item_subtitle"
+                android:text="@string/preview_image_enable_landscape_subtitle" />
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/enable_landscape_checkbox"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/base_margin_horizontal"
+            android:layout_marginEnd="@dimen/base_margin_horizontal"
+            android:enabled="true"
+            app:layout_constraintBottom_toBottomOf="@id/enable_landscape_layout"
+            app:layout_constraintTop_toTopOf="@id/enable_landscape_layout" />
+
+        <LinearLayout
+            android:id="@+id/enable_mirror_layout"
+            style="@style/item_2_lines"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            app:layout_constraintTop_toBottomOf="@id/enable_landscape_checkbox">
+
+            <TextView
+                style="@style/item_title"
+                android:text="@string/preview_image_enable_mirror_title" />
+
+            <TextView
+                style="@style/item_subtitle"
+                android:text="@string/preview_image_enable_mirror_subtitle" />
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/enable_mirror_checkbox"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/base_margin_horizontal"
+            android:layout_marginEnd="@dimen/base_margin_horizontal"
+            android:enabled="true"
+            app:layout_constraintBottom_toBottomOf="@id/enable_mirror_layout"
+            app:layout_constraintTop_toTopOf="@id/enable_mirror_layout" />
+
+        <TextView
+            android:id="@+id/post_process_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/base_margin_horizontal"
+            android:layout_marginTop="@dimen/label_vertical_spacing"
+            android:text="@string/preview_image_post_process_label"
+            android:textAppearance="?android:attr/textAppearance"
+            android:textColor="@color/colorAccent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider12" />
+
+        <LinearLayout
+            android:id="@+id/enable_post_process_layout"
+            style="@style/item_2_lines"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            app:layout_constraintTop_toBottomOf="@id/post_process_label">
+
+            <TextView
+                style="@style/item_title"
+                android:text="@string/preview_image_enable_post_process_title" />
+
+            <TextView
+                style="@style/item_subtitle"
+                android:text="@string/preview_image_enable_post_process_subtitle" />
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/enable_post_process_checkbox"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/base_margin_horizontal"
+            android:layout_marginEnd="@dimen/base_margin_horizontal"
+            app:layout_constraintBottom_toBottomOf="@id/enable_post_process_layout"
+            app:layout_constraintTop_toTopOf="@id/enable_post_process_layout" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

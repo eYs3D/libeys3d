@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <CheckBox
+        android:id="@+id/autoExposureCheckbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/base_margin_horizontal"
+        android:enabled="false"
+        android:paddingStart="@dimen/base_margin_horizontal"
+        android:paddingTop="@dimen/label_vertical_spacing"
+        android:paddingEnd="@dimen/base_margin_horizontal"
+        android:paddingBottom="@dimen/label_vertical_spacing"
+        android:text="@string/sensor_settings_auto_exposure"
+        android:textAppearance="?android:attr/textAppearanceListItemSmall"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/exposureTimeContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/autoExposureCheckbox">
+
+        <TextView
+            android:id="@+id/exposureTimeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/base_margin_horizontal"
+            android:duplicateParentState="true"
+            android:text="@string/sensor_settings_manual_exposure_time"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.warkiz.widget.IndicatorStayLayout
+            android:id="@+id/exposureTimeBarLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/base_margin_horizontal"
+            android:layout_marginTop="@dimen/label_half_vertical_spacing"
+            android:layout_marginEnd="@dimen/base_margin_horizontal"
+            android:duplicateParentState="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/exposureTimeLabel">
+
+            <com.warkiz.widget.IndicatorSeekBar
+                android:id="@+id/exposureTimeBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:duplicateParentState="true"
+                android:enabled="false"
+                app:isb_show_indicator="rounded_rectangle"
+                app:isb_show_tick_marks_type="divider"
+                app:isb_show_tick_texts="true"
+                app:isb_tick_texts_color="@color/colorPrimary"
+                app:isb_ticks_count="2" />
+        </com.warkiz.widget.IndicatorStayLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/label_vertical_spacing"
+        android:background="?android:attr/dividerVertical"
+        app:layout_constraintTop_toBottomOf="@id/exposureTimeContainer" />
+
+    <CheckBox
+        android:id="@+id/autoWhiteBalanceCheckbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/base_margin_horizontal"
+        android:enabled="false"
+        android:paddingStart="@dimen/base_margin_horizontal"
+        android:paddingTop="@dimen/label_vertical_spacing"
+        android:paddingEnd="@dimen/base_margin_horizontal"
+        android:paddingBottom="@dimen/label_vertical_spacing"
+        android:text="@string/sensor_settings_auto_white_balance"
+        android:textAppearance="?android:attr/textAppearanceListItemSmall"
+        app:layout_constraintTop_toBottomOf="@id/divider" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/manualWhiteBalanceContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/autoWhiteBalanceCheckbox">
+
+        <TextView
+            android:id="@+id/manualWhiteBalanceLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/base_margin_horizontal"
+            android:duplicateParentState="true"
+            android:text="@string/sensor_settings_manual_white_balance"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.warkiz.widget.IndicatorStayLayout
+            android:id="@+id/manualWhiteBalanceBarLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/base_margin_horizontal"
+            android:layout_marginTop="@dimen/label_half_vertical_spacing"
+            android:layout_marginEnd="@dimen/base_margin_horizontal"
+            android:duplicateParentState="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/manualWhiteBalanceLabel">
+
+            <com.warkiz.widget.IndicatorSeekBar
+                android:id="@+id/manualWhiteBalanceBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:duplicateParentState="true"
+                android:enabled="false"
+                app:isb_show_indicator="rounded_rectangle"
+                app:isb_show_tick_marks_type="divider"
+                app:isb_show_tick_texts="true"
+                app:isb_tick_texts_color="@color/colorPrimary"
+                app:isb_ticks_count="2" />
+
+        </com.warkiz.widget.IndicatorStayLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/label_vertical_spacing"
+        android:background="?android:attr/dividerVertical"
+        app:layout_constraintTop_toBottomOf="@id/manualWhiteBalanceContainer" />
+
+    <TextView
+        android:id="@+id/tvLightSource"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/base_margin_horizontal"
+        android:layout_marginTop="@dimen/label_vertical_spacing"
+        android:enabled="false"
+        android:text="@string/sensor_settings_light_source"
+        android:textAppearance="?android:attr/textAppearanceListItemSmall"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider2" />
+
+    <RadioGroup
+        android:id="@+id/lightSourceRadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/label_half_vertical_spacing"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/tvLightSource">
+
+        <!--        <RadioButton-->
+        <!--            android:id="@+id/light50hz"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginStart="@dimen/base_margin_horizontal"-->
+        <!--            android:duplicateParentState="true"-->
+        <!--            android:paddingStart="@dimen/base_margin_horizontal"-->
+        <!--            android:paddingEnd="@dimen/base_margin_horizontal"-->
+        <!--            android:text="@string/sensor_settings_light_50hz"-->
+        <!--            android:textAppearance="?android:attr/textAppearanceListItemSmall" />-->
+
+        <!--        <RadioButton-->
+        <!--            android:id="@+id/light60hz"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginStart="@dimen/base_margin_horizontal"-->
+        <!--            android:duplicateParentState="true"-->
+        <!--            android:paddingStart="@dimen/base_margin_horizontal"-->
+        <!--            android:paddingEnd="@dimen/base_margin_horizontal"-->
+        <!--            android:text="@string/sensor_settings_light_60hz"-->
+        <!--            android:textAppearance="?android:attr/textAppearanceListItemSmall" />-->
+    </RadioGroup>
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/label_vertical_spacing"
+        android:background="?android:attr/dividerVertical"
+        app:layout_constraintTop_toBottomOf="@id/lightSourceRadioGroup" />
+
+    <CheckBox
+        android:id="@+id/lowLightCompensationCheckbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/base_margin_horizontal"
+        android:enabled="false"
+        android:paddingStart="@dimen/base_margin_horizontal"
+        android:paddingTop="@dimen/label_vertical_spacing"
+        android:paddingEnd="@dimen/base_margin_horizontal"
+        android:paddingBottom="@dimen/label_vertical_spacing"
+        android:text="@string/sensor_settings_low_light_compensation"
+        android:textAppearance="?android:attr/textAppearanceListItemSmall"
+        app:layout_constraintTop_toBottomOf="@id/divider3" />
+
+    <View
+        android:id="@+id/divider4"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/dividerVertical"
+        app:layout_constraintTop_toBottomOf="@id/lowLightCompensationCheckbox" />
+
+    <Button
+        android:id="@+id/bt_reset"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/reset"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider4" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
