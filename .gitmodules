@@ -14,3 +14,6 @@
 [submodule "wrappers/opencv"]
 	path = wrappers/opencv
 	url = git@github.com:alanlineys3d/opencv_wrapper_sinet.git
+[submodule "wrappers/python"]
+	path = wrappers/python
+	url = git@github.com:eYs3Dsw/eys3d_python_wrapper.git
