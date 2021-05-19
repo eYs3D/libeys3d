@@ -11,3 +11,6 @@
 [submodule "wrappers/ros"]
 	path = wrappers/ros
 	url = git@github.com:eYs3Dsw/eys3d_robot.git
+[submodule "wrappers/opencv"]
+	path = wrappers/opencv
+	url = git@github.com:alanlineys3d/opencv_wrapper_sinet.git
