@@ -1,3 +1,0 @@
-<launch>
-  <include file="$(find eys3d_robot)/launch/lidar/$(env EYS3DLIDAR).launch" />
-</launch>

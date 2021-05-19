@@ -1,9 +1,0 @@
-﻿<launch>
-  <include file="$(find rikirobot_urdf)/launch/display.launch"/>
-  <include file="$(find eys3d_robot)/launch/eys3d/depth2lidar/eys3d_dmpreview_to_lidar.launch"/>
-<node pkg="tf" type="static_transform_publisher" name="base_link_to_laser" args="0 0 0 0 0 0  /base_link /laser  100"/>
-  <include file="$(find eys3d_robot)/launch/eys3d/gmapping/eys3d_gmapping.xml"/>
-
-  <include file="$(find eys3d_robot)/param/navigation/move_base.xml" />
-  <include file="$(find eys3d_robot)/launch/exploration.launch" />
-</launch>
