@@ -1,4 +1,0 @@
-#ifndef LIB_ETRONDI_VERSION_H
-#define LIB_ETRONDI_VERSION_H
-#define ETRONDI_VERSION "0498510e"
-#endif

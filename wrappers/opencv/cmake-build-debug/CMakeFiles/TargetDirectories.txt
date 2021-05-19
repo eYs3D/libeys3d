@@ -1,3 +1,0 @@
-/home/alanlin/project2/opencv-sdk/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/alanlin/project2/opencv-sdk/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/alanlin/project2/opencv-sdk/cmake-build-debug/CMakeFiles/eys3d_opencv.dir
