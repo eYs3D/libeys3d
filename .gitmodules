@@ -2,3 +2,6 @@
 	path = DMPreview/HD-DM-Android-SDK
 	url = git@github.com:alanlineys3d/HD-DM-Android-SDK.git
 	branch = sinet_dev
+[submodule "DMPreview/HD-DM-Linux-SDK"]
+	path = DMPreview/HD-DM-Linux-SDK
+	url = git@github.com:alanlineys3d/HD-DM-Linux-SDK.git
