@@ -5,3 +5,6 @@
 [submodule "DMPreview/HD-DM-Linux-SDK"]
 	path = DMPreview/HD-DM-Linux-SDK
 	url = git@github.com:alanlineys3d/HD-DM-Linux-SDK.git
+[submodule "DMPreview/HD-DM-Windows-SDK-Release"]
+	path = DMPreview/HD-DM-Windows-SDK-Release
+	url = git@github.com:alanlineys3d/HD-DM-Windows-SDK.git
