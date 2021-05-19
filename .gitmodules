@@ -8,3 +8,6 @@
 [submodule "DMPreview/HD-DM-Windows-SDK-Release"]
 	path = DMPreview/HD-DM-Windows-SDK-Release
 	url = git@github.com:alanlineys3d/HD-DM-Windows-SDK.git
+[submodule "wrappers/ros"]
+	path = wrappers/ros
+	url = git@github.com:eYs3Dsw/eys3d_robot.git
