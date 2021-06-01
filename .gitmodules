@@ -21,4 +21,4 @@
 	url = git@github.com:eYs3D/eys3d_unity_release.git
 [submodule "tools/eCaptureView_Windows"]
 	path = tools/eCaptureView_Windows
-	url = git@github.com:Wenling-YU/eCaptureView_Windows.git
+	url = git@github.com:eYs3D/eCaptureView_Windows.git
