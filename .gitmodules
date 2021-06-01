@@ -25,3 +25,6 @@
 [submodule "tools/eCaptureView_Android"]
 	path = tools/eCaptureView_Android
 	url = git@github.com:eYs3D/eCaptureView_Android.git
+[submodule "tools/eCaptureView_Linux"]
+	path = tools/eCaptureView_Linux
+	url = git@github.com:eYs3D/eCaptureView_Linux.git
