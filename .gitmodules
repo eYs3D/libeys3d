@@ -19,3 +19,7 @@
 [submodule "wrappers/unity"]
 	path = wrappers/unity
 	url = git@github.com:eYs3D/eys3d_unity_release.git
+
+[submodule "tools/eCaptureView_Windows"]
+	path = tools/eCaptureView_Windows
+	url = git@github.com:eYs3D/eCaptureView_Windows.git
