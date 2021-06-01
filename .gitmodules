@@ -28,3 +28,6 @@
 [submodule "tools/eCaptureView_Linux"]
 	path = tools/eCaptureView_Linux
 	url = git@github.com:eYs3D/eCaptureView_Linux.git
+[submodule "third-party"]
+	path = third-party
+	url = git@github.com:eYs3D/third-party.git
