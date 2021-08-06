@@ -1,15 +1,6 @@
 [submodule "wrappers/python"]
 	path = wrappers/python
 	url = git@github.com:eYs3Dsw/eys3d_python_wrapper.git
-[submodule "DMPreview/HD-DM-Windows-SDK-Release"]
-	path = DMPreview/HD-DM-Windows-SDK-Release
-	url = git@github.com:eYs3Dsw/HD-DM-Windows-SDK-Release.git
-[submodule "DMPreview/HD-DM-Android-SDK-Release"]
-	path = DMPreview/HD-DM-Android-SDK-Release
-	url = git@github.com:eYs3Dsw/HD-DM-Android-SDK-Release.git
-[submodule "DMPreview/HD-DM-Linux-SDK-Release"]
-	path = DMPreview/HD-DM-Linux-SDK-Release
-	url = git@github.com:eYs3Dsw/HD-DM-Linux-SDK-Release.git
 [submodule "wrappers/opencv"]
 	path = wrappers/opencv
 	url = git@github.com:eYs3Dsw/eys3d_opencv_wrapper.git
