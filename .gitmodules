@@ -25,6 +25,3 @@
 [submodule "examples"]
 	path = examples
 	url = git@github.com:eYs3D/examples.git
-[submodule "wrappers/ros2"]
-	path = wrappers/ros2
-	url = git@github.com:eYs3D/HD-DM-ROS2-SDK-Release.git
