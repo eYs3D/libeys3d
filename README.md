@@ -1,4 +1,4 @@
-<p align="center"><img src="doc/img/eCapture_logo_3a.png" width="70%" /><br><br></p>
+<p align="center"><img src="./doc/img/ecapture_aidpu.jpg" width="70%" /><br><br></p>
 
 -----------------
 
