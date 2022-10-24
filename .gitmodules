@@ -7,6 +7,7 @@
 [submodule "wrappers/ros"]
 	path = wrappers/ros
 	url = git@github.com:eYs3Dsw/eys3d_ros.git
+	branch = master
 [submodule "wrappers/unity"]
 	path = wrappers/unity
 	url = git@github.com:eYs3D/eys3d_unity_release.git
